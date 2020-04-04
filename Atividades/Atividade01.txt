@@ -1,14 +1,21 @@
 1. Verificar o endereçamento de um host.
 
 a) Abra o Prompt de Comando no Windows.
+Abri
 
 b) Execute o comando ipconfig. Quais os endereços IPs da sua estação, da máscara de rede e do gateway padrão?
+Endereço IPV6: fe80::79e2:4cec:2335:75a1%9
+Endereço IPV4: 192.168.0.5
+Máscara de Rede: 255.255.255.0
+Gateway Padrão: 192.168.0.1
 
 c) Calcule os endereços de rede IPv4 a partir do seu endereço IP da máscara de rede.
 
 d) Execute o comando ipconfig/all. Quais as informações foram apresentadas a mais?
+O ipconfig/all mostra as descrições de cada rede e passa as informações de servidores de DNS e adaptadores de rede
 
 e) Execute o comando ipconfig/release *Con*. Quai foi o resultado?
+
 
 f) Execute o comando ipconfig/renew. Qual foi o resultado?
 
