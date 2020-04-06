@@ -16,69 +16,553 @@ O ipconfig/all mostra as descrições de cada rede e passa as informações de s
 
 e) Execute o comando ipconfig/release *Con*. Quai foi o resultado?
 
+Windows IP Configuration
 
+No operation can be performed on Ethernet while it has its media disconnected.
+No operation can be performed on Local Area Connection* 1 while it has its media disconnected.
+No operation can be performed on Local Area Connection* 2 while it has its media disconnected.
+No operation can be performed on Bluetooth Network Connection while it has its media disconnected.
+
+Ethernet adapter Ethernet:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::79e2:4cec:2335:75a1%9
+   Default Gateway . . . . . . . . . :
+
+Ethernet adapter Bluetooth Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+   
 f) Execute o comando ipconfig/renew. Qual foi o resultado?
+
+Windows IP Configuration
+
+No operation can be performed on Ethernet while it has its media disconnected.
+No operation can be performed on Local Area Connection* 1 while it has its media disconnected.
+No operation can be performed on Local Area Connection* 2 while it has its media disconnected.
+No operation can be performed on Bluetooth Network Connection while it has its media disconnected.
+
+Ethernet adapter Ethernet:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::79e2:4cec:2335:75a1%9
+   IPv4 Address. . . . . . . . . . . : 192.168.0.5
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.0.1
+
+Ethernet adapter Bluetooth Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
 
 g) Execute o comando ipconfig/displaydns. Quai foi o resultado?
 
+O cache do DNS
+
 h) Execute o comando ipconfig/flushdns em seguida o comando ipconfig/displaydns. Quai foi o resultado?
 
+O cache do DNS é limpo e quando o /displaydns é executado a lista vem vazia
 
 
 2. Testar a conectividade física entre dois hosts.
 
 a) Execute o comando ping seguido do endereço IP da sua estação, identificado no item anterior. Qual foi o resultado?
+Ping statistics for 192.168.0.5:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
 
 b) Execute novamente o comando anterior acrescentando o parametro -t. Qual foi o resultado?
+O envio e recebimento continuo de um pacote para o meu próprio IP
 
 c) Execute o comando ping seguido do endereço de loopback. Qual foi o resultado?
+Ping statistics for 127.0.0.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
 
 d) Execute o comando ping seguido do endereço do gateway padrão. Qual foi o resultado? 
+Ping statistics for 192.168.0.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 77ms, Average = 21ms
 
 e) Execute o comando ping seguido do nome da sua estação. Qual foi o resultado?
+Ping statistics for fe80::79e2:4cec:2335:75a1%9:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
 
 f) Execute o comando ping seguido do host www.iesb.br. Qual foi o resultado?
+Ping statistics for 54.174.194.96:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 162ms, Maximum = 168ms, Average = 164ms
 
 g) Execute o comando ping seguido do host intranet.iesb.br. Qual foi o resultado?
-
+Ping request could not find host intranet.iesb.br. Please check the name and try again.
 
 
 3. Resolver nomes dos hosts para achar os endereços IP.
 
 a) Execute o comando nslookup seguido do endereço IP da sua estação. Qual foi o resultado?
+Server:  b5d58402.virtua.com.br
+Address:  181.213.132.2
 
+*** b5d58402.virtua.com.br can't find 192.168.0.5: Non-existent domain
 b) Execute o comando nslookup seguido do nome da sua estação. Qual foi o resultado?
+Server:  b5d58402.virtua.com.br
+Address:  181.213.132.2
+
+*** b5d58402.virtua.com.br can't find DESKTOP-AQBBQR8: Non-existent domain
 
 c) Execute o comando nslookup seguido do host www.iesb.br. Qual foi o resultado?
+Server:  b5d58402.virtua.com.br
+Address:  181.213.132.2
+
+Non-authoritative answer:
+Name:    www.iesb.br
+Address:  54.174.194.96
 
 d) Execute o comando nslookup seguido do host intranet.iesb.br. Qual foi o resultado?
+Server:  b5d58402.virtua.com.br
+Address:  181.213.132.2
 
+*** b5d58402.virtua.com.br can't find intranet.iesb.br: Non-existent domain
 
 
 4. Verificar rotas entre dois hosts.
 
 a) Execute o comando tracert seguido do endereço IP da sua estação. Quantos saltos foram realizados? O destino foi alcançado? 
+1 salto, destino alcançado
 
 b) Execute o comando tracert seguido do endereço do gateway padrão. Quantos saltos foram realizados? O destino foi alcançado?
+1 salto, destino alcançado
 
 c) Execute o comando tracert www.iesb.br para verificar o roteamento de pacotes. Qual foi o resultado? O destino foi alcançado?
+Tracing route to www.iesb.br [54.174.194.96]
+over a maximum of 30 hops:
+
+  1    17 ms    15 ms    11 ms  10.33.128.1
+  2    13 ms    13 ms    22 ms  bd060095.virtua.com.br [189.6.0.149]
+  3    13 ms    20 ms    27 ms  nvha01-1001.dial.bsa.embratel.net.br [200.252.186.1]
+  4     *        *        *     Request timed out.
+  5   142 ms   259 ms   147 ms  ebt-B16131-intl03.mianap.embratel.net.br [200.230.220.202]
+  6   146 ms   136 ms   135 ms  72.21.221.208
+  7     *        *        *     Request timed out.
+  8     *        *        *     Request timed out.
+  9     *        *        *     Request timed out.
+ 10     *        *        *     Request timed out.
+ 11     *        *        *     Request timed out.
+ 12     *        *        *     Request timed out.
+ 13     *        *        *     Request timed out.
+ 14     *        *        *     Request timed out.
+ 15     *        *        *     Request timed out.
+ 16     *        *        *     Request timed out.
+ 17     *        *        *     Request timed out.
+ 18     *        *        *     Request timed out.
+ 19     *        *        *     Request timed out.
+ 20     *        *        *     Request timed out.
+ 21     *        *        *     Request timed out.
+ 22     *        *        *     Request timed out.
+ 23     *        *        *     Request timed out.
+ 24     *        *        *     Request timed out.
+ 25     *        *        *     Request timed out.
+ 26     *        *        *     Request timed out.
+ 27     *        *        *     Request timed out.
+ 28     *        *        *     Request timed out.
+ 29     *        *        *     Request timed out.
+ 30     *        *        *     Request timed out.
+
+Trace complete.
+
+Destino alcançado, porém não visível por conta de um firewall
 
 d) Execute o comando tracert intranet.iesb.br. Qual foi o resultado? O destino foi alcançado?
+Unable to resolve target system name intranet.iesb.br.
+Destino não alcançado
 
 e) Execute o comando tracert helpdesk.iesb.br. Qual foi o resultado? O destino foi alcançado?
+Tracing route to helpdesk.iesb.br [186.251.61.127]
+over a maximum of 30 hops:
+
+  1    13 ms    17 ms    29 ms  10.33.128.1
+  2    23 ms    31 ms    20 ms  bd060095.virtua.com.br [189.6.0.149]
+  3    42 ms    23 ms    14 ms  200.192.110.19
+  4    17 ms    26 ms    10 ms  45.171.103.234
+  5     *        *        *     Request timed out.
+  6     *        *        *     Request timed out.
+  7     *        *        *     Request timed out.
+  8     *        *        *     Request timed out.
+  9     *        *        *     Request timed out.
+ 10     *        *        *     Request timed out.
+ 11     *        *        *     Request timed out.
+ 12     *        *        *     Request timed out.
+ 13     *        *        *     Request timed out.
+ 14     *        *        *     Request timed out.
+ 15     *        *        *     Request timed out.
+ 16     *        *        *     Request timed out.
+ 17     *        *        *     Request timed out.
+ 18     *        *        *     Request timed out.
+ 19     *        *        *     Request timed out.
+ 20     *        *        *     Request timed out.
+ 21     *        *        *     Request timed out.
+ 22     *        *        *     Request timed out.
+ 23     *        *        *     Request timed out.
+ 24     *        *        *     Request timed out.
+ 25     *        *        *     Request timed out.
+ 26     *        *        *     Request timed out.
+ 27     *        *        *     Request timed out.
+ 28     *        *        *     Request timed out.
+ 29     *        *        *     Request timed out.
+ 30     *        *        *     Request timed out.
+
+Trace complete.
+Destino alcançado
 
 
 
 5. Verificar as conexões estabelecidas pelo host.
 
 a) Execute o comando netstat. Qual foi o resultado?
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    127.0.0.1:9977         DESKTOP-AQBBQR8:59186  ESTABLISHED
+  TCP    127.0.0.1:52922        DESKTOP-AQBBQR8:65001  ESTABLISHED
+  TCP    127.0.0.1:53120        DESKTOP-AQBBQR8:59222  ESTABLISHED
+  TCP    127.0.0.1:59186        DESKTOP-AQBBQR8:9977   ESTABLISHED
+  TCP    127.0.0.1:59222        DESKTOP-AQBBQR8:53120  ESTABLISHED
+  TCP    127.0.0.1:65001        DESKTOP-AQBBQR8:52922  ESTABLISHED
+  TCP    192.168.0.5:56173      52.177.166.224:https   ESTABLISHED
+  TCP    192.168.0.5:56174      host-77-79-249-196:https  ESTABLISHED
+  TCP    192.168.0.5:56184      xiva-daria:https       ESTABLISHED
+  TCP    192.168.0.5:56185      162.159.135.234:https  ESTABLISHED
+  TCP    192.168.0.5:56201      host-77-79-249-196:https  ESTABLISHED
+  TCP    192.168.0.5:56221      40.90.10.66:https      ESTABLISHED
+  TCP    192.168.0.5:56229      40.90.10.180:https     ESTABLISHED
+  TCP    192.168.0.5:56238      47:https               ESTABLISHED
+  TCP    192.168.0.5:56264      a23-216-161-11:https   CLOSE_WAIT
+  TCP    192.168.0.5:56273      yandex:https           ESTABLISHED
+  TCP    192.168.0.5:56403      a104-109-51-224:https  ESTABLISHED
+  TCP    192.168.0.5:56444      sba:https              ESTABLISHED
+  TCP    192.168.0.5:56474      dr:https               ESTABLISHED
+  TCP    192.168.0.5:56501      151.101.94.49:https    ESTABLISHED
+  TCP    192.168.0.5:56537      a23-216-161-11:https   ESTABLISHED
+  TCP    192.168.0.5:56539      lb-140-82-112-26-iad:https  ESTABLISHED
+  TCP    192.168.0.5:56564      13.107.42.15:https     ESTABLISHED
+  TCP    192.168.0.5:56568      13.107.21.200:https    ESTABLISHED
+  TCP    192.168.0.5:56570      bd062d73:http          ESTABLISHED
+  TCP    192.168.0.5:56571      20.36.219.28:https     ESTABLISHED
+  TCP    192.168.0.5:56572      52.114.75.78:https     TIME_WAIT
+
 
 b) Execute o comando netstat -n. Qual foi o resultado? Notou algo diferente?
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    127.0.0.1:9977         127.0.0.1:59186        ESTABLISHED
+  TCP    127.0.0.1:52922        127.0.0.1:65001        ESTABLISHED
+  TCP    127.0.0.1:53120        127.0.0.1:59222        ESTABLISHED
+  TCP    127.0.0.1:59186        127.0.0.1:9977         ESTABLISHED
+  TCP    127.0.0.1:59222        127.0.0.1:53120        ESTABLISHED
+  TCP    127.0.0.1:65001        127.0.0.1:52922        ESTABLISHED
+  TCP    192.168.0.5:56173      52.177.166.224:443     ESTABLISHED
+  TCP    192.168.0.5:56174      77.79.249.196:443      ESTABLISHED
+  TCP    192.168.0.5:56184      213.180.204.179:443    ESTABLISHED
+  TCP    192.168.0.5:56185      162.159.135.234:443    ESTABLISHED
+  TCP    192.168.0.5:56201      77.79.249.196:443      ESTABLISHED
+  TCP    192.168.0.5:56221      40.90.10.66:443        ESTABLISHED
+  TCP    192.168.0.5:56229      40.90.10.180:443       ESTABLISHED
+  TCP    192.168.0.5:56238      35.186.224.47:443      ESTABLISHED
+  TCP    192.168.0.5:56264      23.216.161.11:443      CLOSE_WAIT
+  TCP    192.168.0.5:56273      5.255.255.77:443       ESTABLISHED
+  TCP    192.168.0.5:56403      104.109.51.224:443     ESTABLISHED
+  TCP    192.168.0.5:56444      213.180.204.232:443    ESTABLISHED
+  TCP    192.168.0.5:56474      93.158.134.242:443     ESTABLISHED
+  TCP    192.168.0.5:56537      23.216.161.11:443      CLOSE_WAIT
+  TCP    192.168.0.5:56539      140.82.112.26:443      ESTABLISHED
+  TCP    192.168.0.5:56570      189.6.45.115:80        TIME_WAIT
+  TCP    192.168.0.5:56571      20.36.219.28:443       TIME_WAIT
+  TCP    192.168.0.5:56577      20.36.219.28:443       ESTABLISHED
+
+Endereços e ports estão em forma numerica
+
 
 c) Execute o comando netstat -na. Qual foi o resultado? Notou algo diferente?
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:5040           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:5357           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:7680           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:27036          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:39000          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49664          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49665          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49666          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49667          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49668          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49669          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49695          0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:3213         0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:6463         0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:9977         0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:9977         127.0.0.1:59186        ESTABLISHED
+  TCP    127.0.0.1:27060        0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:52922        127.0.0.1:65001        ESTABLISHED
+  TCP    127.0.0.1:53120        127.0.0.1:59222        ESTABLISHED
+  TCP    127.0.0.1:57686        0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:59186        127.0.0.1:9977         ESTABLISHED
+  TCP    127.0.0.1:59192        0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:59222        0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:59222        127.0.0.1:53120        ESTABLISHED
+  TCP    127.0.0.1:65001        0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:65001        127.0.0.1:52922        ESTABLISHED
+  TCP    192.168.0.5:139        0.0.0.0:0              LISTENING
+  TCP    192.168.0.5:56173      52.177.166.224:443     ESTABLISHED
+  TCP    192.168.0.5:56174      77.79.249.196:443      ESTABLISHED
+  TCP    192.168.0.5:56184      213.180.204.179:443    ESTABLISHED
+  TCP    192.168.0.5:56185      162.159.135.234:443    ESTABLISHED
+  TCP    192.168.0.5:56201      77.79.249.196:443      ESTABLISHED
+  TCP    192.168.0.5:56221      40.90.10.66:443        ESTABLISHED
+  TCP    192.168.0.5:56229      40.90.10.180:443       ESTABLISHED
+  TCP    192.168.0.5:56238      35.186.224.47:443      ESTABLISHED
+  TCP    192.168.0.5:56264      23.216.161.11:443      CLOSE_WAIT
+  TCP    192.168.0.5:56273      5.255.255.77:443       ESTABLISHED
+  TCP    192.168.0.5:56403      104.109.51.224:443     ESTABLISHED
+  TCP    192.168.0.5:56444      213.180.204.232:443    ESTABLISHED
+  TCP    192.168.0.5:56537      23.216.161.11:443      CLOSE_WAIT
+  TCP    192.168.0.5:56539      140.82.112.26:443      ESTABLISHED
+  TCP    192.168.0.5:56571      20.36.219.28:443       TIME_WAIT
+  TCP    192.168.0.5:56577      20.36.219.28:443       ESTABLISHED
+  TCP    192.168.0.5:56582      87.250.250.29:443      ESTABLISHED
+  TCP    192.168.0.5:56583      87.250.250.29:443      ESTABLISHED
+  TCP    192.168.0.5:56586      23.216.161.11:443      ESTABLISHED
+  TCP    [::]:135               [::]:0                 LISTENING
+  TCP    [::]:445               [::]:0                 LISTENING
+  TCP    [::]:5357              [::]:0                 LISTENING
+  TCP    [::]:7680              [::]:0                 LISTENING
+  TCP    [::]:39000             [::]:0                 LISTENING
+  TCP    [::]:49664             [::]:0                 LISTENING
+  TCP    [::]:49665             [::]:0                 LISTENING
+  TCP    [::]:49666             [::]:0                 LISTENING
+  TCP    [::]:49667             [::]:0                 LISTENING
+  TCP    [::]:49668             [::]:0                 LISTENING
+  TCP    [::]:49669             [::]:0                 LISTENING
+  TCP    [::]:49695             [::]:0                 LISTENING
+  UDP    0.0.0.0:500            *:*
+  UDP    0.0.0.0:3702           *:*
+  UDP    0.0.0.0:3702           *:*
+  UDP    0.0.0.0:3702           *:*
+  UDP    0.0.0.0:3702           *:*
+  UDP    0.0.0.0:4500           *:*
+  UDP    0.0.0.0:5050           *:*
+  UDP    0.0.0.0:5353           *:*
+  UDP    0.0.0.0:5355           *:*
+  UDP    0.0.0.0:27036          *:*
+  UDP    0.0.0.0:49355          *:*
+  UDP    0.0.0.0:49621          *:*
+  UDP    0.0.0.0:53096          *:*
+  UDP    0.0.0.0:54507          *:*
+  UDP    0.0.0.0:60364          *:*
+  UDP    0.0.0.0:62000          *:*
+  UDP    0.0.0.0:62523          *:*
+  UDP    0.0.0.0:62850          *:*
+  UDP    0.0.0.0:63383          *:*
+  UDP    127.0.0.1:1900         *:*
+  UDP    127.0.0.1:10020        *:*
+  UDP    127.0.0.1:10021        *:*
+  UDP    127.0.0.1:49666        *:*
+  UDP    127.0.0.1:58657        *:*
+  UDP    127.0.0.1:58918        *:*
+  UDP    192.168.0.5:137        *:*
+  UDP    192.168.0.5:138        *:*
+  UDP    192.168.0.5:1900       *:*
+  UDP    192.168.0.5:2177       *:*
+  UDP    192.168.0.5:5353       *:*
+  UDP    192.168.0.5:58656      *:*
+  UDP    [::]:500               *:*
+  UDP    [::]:3702              *:*
+  UDP    [::]:3702              *:*
+  UDP    [::]:3702              *:*
+  UDP    [::]:3702              *:*
+  UDP    [::]:4500              *:*
+  UDP    [::]:5353              *:*
+  UDP    [::]:5355              *:*
+  UDP    [::]:49356             *:*
+  UDP    [::]:49622             *:*
+  UDP    [::]:54508             *:*
+  UDP    [::]:62000             *:*
+  UDP    [::1]:1900             *:*
+  UDP    [::1]:5353             *:*
+  UDP    [::1]:58655            *:*
+  UDP    [fe80::79e2:4cec:2335:75a1%9]:1900  *:*
+  UDP    [fe80::79e2:4cec:2335:75a1%9]:2177  *:*
+  UDP    [fe80::79e2:4cec:2335:75a1%9]:58654  *:*
+Endereços e ports estão em formato numérico e todos os ports ativos estão sendo mostrados
 
 d) Execute o comando netstat -nap TCP. Qual foi o resultado? Notou algo diferente?
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:5040           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:5357           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:7680           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:27036          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:39000          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49664          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49665          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49666          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49667          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49668          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49669          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:49695          0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:3213         0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:6463         0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:9977         0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:9977         127.0.0.1:59186        ESTABLISHED
+  TCP    127.0.0.1:27060        0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:52922        127.0.0.1:65001        ESTABLISHED
+  TCP    127.0.0.1:53120        127.0.0.1:59222        ESTABLISHED
+  TCP    127.0.0.1:57686        0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:59186        127.0.0.1:9977         ESTABLISHED
+  TCP    127.0.0.1:59192        0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:59222        0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:59222        127.0.0.1:53120        ESTABLISHED
+  TCP    127.0.0.1:65001        0.0.0.0:0              LISTENING
+  TCP    127.0.0.1:65001        127.0.0.1:52922        ESTABLISHED
+  TCP    192.168.0.5:139        0.0.0.0:0              LISTENING
+  TCP    192.168.0.5:56173      52.177.166.224:443     ESTABLISHED
+  TCP    192.168.0.5:56174      77.79.249.196:443      ESTABLISHED
+  TCP    192.168.0.5:56184      213.180.204.179:443    ESTABLISHED
+  TCP    192.168.0.5:56185      162.159.135.234:443    ESTABLISHED
+  TCP    192.168.0.5:56201      77.79.249.196:443      ESTABLISHED
+  TCP    192.168.0.5:56221      40.90.10.66:443        ESTABLISHED
+  TCP    192.168.0.5:56229      40.90.10.180:443       ESTABLISHED
+  TCP    192.168.0.5:56238      35.186.224.47:443      ESTABLISHED
+  TCP    192.168.0.5:56273      5.255.255.77:443       ESTABLISHED
+  TCP    192.168.0.5:56403      104.109.51.224:443     ESTABLISHED
+  TCP    192.168.0.5:56537      23.216.161.11:443      CLOSE_WAIT
+  TCP    192.168.0.5:56539      140.82.112.26:443      ESTABLISHED
+  TCP    192.168.0.5:56577      20.36.219.28:443       TIME_WAIT
+  TCP    192.168.0.5:56607      104.27.138.232:443     ESTABLISHED
+  TCP    192.168.0.5:56608      93.158.134.82:443      ESTABLISHED
+  TCP    192.168.0.5:56612      104.26.0.94:443        ESTABLISHED
+  TCP    192.168.0.5:56613      172.217.29.46:443      ESTABLISHED
+  TCP    192.168.0.5:56615      23.216.161.11:443      ESTABLISHED
+  TCP    192.168.0.5:56616      54.36.39.68:443        CLOSE_WAIT
+  TCP    192.168.0.5:56617      77.88.21.91:443        ESTABLISHED
+  TCP    192.168.0.5:56619      93.158.134.242:443     ESTABLISHED
+  TCP    192.168.0.5:56626      217.160.86.46:443      ESTABLISHED
+  TCP    192.168.0.5:56628      192.16.58.8:80         TIME_WAIT
+  TCP    192.168.0.5:56629      192.16.58.8:80         TIME_WAIT
+  TCP    192.168.0.5:56633      216.58.202.238:443     ESTABLISHED
+  TCP    192.168.0.5:56634      130.211.16.53:443      ESTABLISHED
+  TCP    192.168.0.5:56638      93.158.134.82:443      TIME_WAIT
+  TCP    192.168.0.5:56639      130.211.26.229:443     ESTABLISHED
+  TCP    192.168.0.5:56640      192.16.48.200:443      ESTABLISHED
+  TCP    192.168.0.5:56641      192.16.48.200:443      ESTABLISHED
+  TCP    192.168.0.5:56642      213.165.66.58:443      ESTABLISHED
+  TCP    192.168.0.5:56644      104.109.49.89:443      TIME_WAIT
+  TCP    192.168.0.5:56645      151.101.94.217:443     ESTABLISHED
+  TCP    192.168.0.5:56646      64.4.54.254:443        ESTABLISHED
+  TCP    192.168.0.5:56648      20.36.253.92:443       ESTABLISHED
+  TCP    192.168.0.5:56649      13.107.21.200:443      ESTABLISHED
+  TCP    192.168.0.5:56650      151.101.94.2:443       ESTABLISHED
+  TCP    192.168.0.5:56651      104.109.24.175:443     ESTABLISHED
+  TCP    192.168.0.5:56658      151.101.93.44:443      ESTABLISHED
+  TCP    192.168.0.5:56665      189.6.45.80:80         ESTABLISHED
+  TCP    192.168.0.5:56666      189.6.45.80:80         ESTABLISHED
+  TCP    192.168.0.5:56667      189.6.45.80:80         ESTABLISHED
+  TCP    192.168.0.5:56668      189.6.45.81:443        ESTABLISHED
+  TCP    192.168.0.5:56669      189.6.45.81:443        ESTABLISHED
+  TCP    192.168.0.5:56670      189.6.45.81:443        ESTABLISHED
+  TCP    192.168.0.5:56673      104.109.48.205:443     ESTABLISHED
+  TCP    192.168.0.5:56674      93.158.134.82:443      ESTABLISHED
+  TCP    192.168.0.5:56675      93.158.134.82:443      ESTABLISHED
+  TCP    192.168.0.5:56676      213.180.204.211:443    ESTABLISHED
+  TCP    192.168.0.5:56677      213.180.204.211:443    ESTABLISHED
+  TCP    192.168.0.5:56678      87.250.247.182:443     ESTABLISHED
+  TCP    192.168.0.5:56683      87.250.247.182:443     ESTABLISHED
+  TCP    192.168.0.5:56685      104.109.23.57:443      ESTABLISHED
+  
+  Endereços e ports em formato numérico, todos os ports estão sendo mostrados e apenas conexões do protocolo TCP estão sendo mostradas
 
 e) Execute o comando netstat -nap UDP. Qual foi o resultado? Notou algo diferente?
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  UDP    0.0.0.0:500            *:*
+  UDP    0.0.0.0:3702           *:*
+  UDP    0.0.0.0:3702           *:*
+  UDP    0.0.0.0:3702           *:*
+  UDP    0.0.0.0:3702           *:*
+  UDP    0.0.0.0:4500           *:*
+  UDP    0.0.0.0:5050           *:*
+  UDP    0.0.0.0:5353           *:*
+  UDP    0.0.0.0:5355           *:*
+  UDP    0.0.0.0:27036          *:*
+  UDP    0.0.0.0:49355          *:*
+  UDP    0.0.0.0:49621          *:*
+  UDP    0.0.0.0:53096          *:*
+  UDP    0.0.0.0:54507          *:*
+  UDP    0.0.0.0:60364          *:*
+  UDP    0.0.0.0:62000          *:*
+  UDP    0.0.0.0:62523          *:*
+  UDP    0.0.0.0:62850          *:*
+  UDP    0.0.0.0:63383          *:*
+  UDP    127.0.0.1:1900         *:*
+  UDP    127.0.0.1:10020        *:*
+  UDP    127.0.0.1:10021        *:*
+  UDP    127.0.0.1:49666        *:*
+  UDP    127.0.0.1:58657        *:*
+  UDP    127.0.0.1:58918        *:*
+  UDP    192.168.0.5:137        *:*
+  UDP    192.168.0.5:138        *:*
+  UDP    192.168.0.5:1900       *:*
+  UDP    192.168.0.5:2177       *:*
+  UDP    192.168.0.5:5353       *:*
+  UDP    192.168.0.5:58656      *:*
+Endereços e ports em formato numérico, todos os ports estão sendo mostrados e apenas conexões de protocolo UDP estão sendo visíveis
 
 f) Abra a página do IESB (www.iesb.br) no navegador. Tente identificar o socket criado através do comando netstat. Qual foi o resultado?
+ TCP    192.168.0.5:57361      ec2-54-174-194-96:https  ESTABLISHED
+  TCP    192.168.0.5:57362      ec2-54-174-194-96:https  ESTABLISHED
+  TCP    192.168.0.5:57363      ec2-54-174-194-96:https  ESTABLISHED
+  TCP    192.168.0.5:57364      ec2-54-174-194-96:https  ESTABLISHED
